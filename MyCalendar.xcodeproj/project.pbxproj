@@ -19,6 +19,7 @@
 		73E6E40128CDD54700A147A5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E6E40028CDD54700A147A5 /* TabBarViewController.swift */; };
 		73E6E40328CDD5E500A147A5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E6E40228CDD5E500A147A5 /* ListViewController.swift */; };
 		73E6E40628CDD61F00A147A5 /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E6E40528CDD61F00A147A5 /* RoutineViewController.swift */; };
+		73E6E40828CEC81600A147A5 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E6E40728CEC81600A147A5 /* ScheduleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		73E6E40028CDD54700A147A5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		73E6E40228CDD5E500A147A5 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		73E6E40528CDD61F00A147A5 /* RoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
+		73E6E40728CEC81600A147A5 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		A6EE47853709371CF5D75C8B /* Pods-MyCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCalendar.release.xcconfig"; path = "Target Support Files/Pods-MyCalendar/Pods-MyCalendar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +89,8 @@
 				73E6E3FA28CDCF7900A147A5 /* TestViewController.swift */,
 				73E6E40228CDD5E500A147A5 /* ListViewController.swift */,
 				73E6E40528CDD61F00A147A5 /* RoutineViewController.swift */,
-				73E6E40428CDD5FF00A147A5 /* New Group */,
+				73E6E40728CEC81600A147A5 /* ScheduleTableViewCell.swift */,
+				73E6E40428CDD5FF00A147A5 /* TabbarController */,
 				73E6E3EC28CDCB6700A147A5 /* Main.storyboard */,
 				73E6E3EF28CDCB6800A147A5 /* Assets.xcassets */,
 				73E6E3F128CDCB6800A147A5 /* LaunchScreen.storyboard */,
@@ -96,13 +99,13 @@
 			path = MyCalendar;
 			sourceTree = "<group>";
 		};
-		73E6E40428CDD5FF00A147A5 /* New Group */ = {
+		73E6E40428CDD5FF00A147A5 /* TabbarController */ = {
 			isa = PBXGroup;
 			children = (
 				73E6E40028CDD54700A147A5 /* TabBarViewController.swift */,
 				73E6E3FE28CDD54200A147A5 /* CommonEnum.swift */,
 			);
-			path = "New Group";
+			path = TabbarController;
 			sourceTree = "<group>";
 		};
 		D643FAE2479AF3BDB0319F57 /* Pods */ = {
@@ -237,6 +240,7 @@
 				73E6E40128CDD54700A147A5 /* TabBarViewController.swift in Sources */,
 				73E6E3E928CDCB6700A147A5 /* SceneDelegate.swift in Sources */,
 				73E6E40328CDD5E500A147A5 /* ListViewController.swift in Sources */,
+				73E6E40828CEC81600A147A5 /* ScheduleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
