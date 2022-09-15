@@ -74,9 +74,21 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jA-iG-ZKS" customClass="FSCalendar">
                                 <rect key="frame" x="0.0" y="44" width="414" height="450"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLp-fy-OIJ">
+                                        <rect key="frame" x="360.5" y="10" width="43.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                        <connections>
+                                            <segue destination="Fb0-kb-rVR" kind="presentation" modalPresentationStyle="fullScreen" id="iWX-Rl-UvC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="NLp-fy-OIJ" firstAttribute="top" secondItem="5jA-iG-ZKS" secondAttribute="top" constant="10" id="SGl-e3-RpU"/>
                                     <constraint firstAttribute="height" constant="450" id="hhe-xh-sRE"/>
+                                    <constraint firstAttribute="trailing" secondItem="NLp-fy-OIJ" secondAttribute="trailing" constant="10" id="vBl-1Y-m4d"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
@@ -94,18 +106,18 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sNX-YL-pw7">
-                                <rect key="frame" x="0.0" y="494" width="414" height="279"/>
+                                <rect key="frame" x="0.0" y="494" width="414" height="328"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScheduleCell" id="amN-nR-Gms" customClass="ScheduleTableViewCell" customModule="MyCalendar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="amN-nR-Gms" id="ivY-XK-SEH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ry-FO-BCP">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21.5"/>
+                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -137,8 +149,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="달력" image="calendar" catalog="system" id="2XL-Rv-34R"/>
+                    <navigationItem key="navigationItem" id="vRU-Cs-DuC"/>
                     <connections>
                         <outlet property="fsCalendar" destination="5jA-iG-ZKS" id="27k-Kr-QMn"/>
+                        <outlet property="goToEventButton" destination="NLp-fy-OIJ" id="wco-hV-5sH"/>
                         <outlet property="scheduleTable" destination="sNX-YL-pw7" id="JiP-ea-Vs7"/>
                     </connections>
                 </viewController>
@@ -175,12 +189,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMm-OI-cbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141" y="86"/>
+            <point key="canvasLocation" x="872" y="-282"/>
+        </scene>
+        <!--Event Add View Controller-->
+        <scene sceneID="Udb-qf-aMd">
+            <objects>
+                <viewController id="Fb0-kb-rVR" customClass="EventAddViewController" customModule="MyCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PdC-57-2yH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hN5-Ew-qIk">
+                                <rect key="frame" x="175" y="54" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="일정을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbW-zq-W6f">
+                                <rect key="frame" x="20" y="95" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="WZ1-9u-ZB1">
+                                <rect key="frame" x="0.0" y="149" width="414" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="cpJ-QL-f0Z"/>
+                                </constraints>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ag3-fc-5Yz">
+                                <rect key="frame" x="355" y="49" width="49" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="저장"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="Fb0-kb-rVR" eventType="touchUpInside" id="9C0-xo-8LJ"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="iBf-4T-9aK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rj2-WQ-GbI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rj2-WQ-GbI" firstAttribute="trailing" secondItem="WZ1-9u-ZB1" secondAttribute="trailing" id="2f4-UN-dkT"/>
+                            <constraint firstItem="WZ1-9u-ZB1" firstAttribute="top" secondItem="LbW-zq-W6f" secondAttribute="bottom" constant="20" id="BPQ-TY-eey"/>
+                            <constraint firstItem="hN5-Ew-qIk" firstAttribute="centerX" secondItem="Rj2-WQ-GbI" secondAttribute="centerX" id="E11-DZ-Rka"/>
+                            <constraint firstItem="Rj2-WQ-GbI" firstAttribute="trailing" secondItem="LbW-zq-W6f" secondAttribute="trailing" constant="20" id="ThB-Tv-leL"/>
+                            <constraint firstItem="WZ1-9u-ZB1" firstAttribute="leading" secondItem="Rj2-WQ-GbI" secondAttribute="leading" id="WM0-bU-F32"/>
+                            <constraint firstItem="LbW-zq-W6f" firstAttribute="leading" secondItem="Rj2-WQ-GbI" secondAttribute="leading" constant="20" id="b3a-IZ-8DG"/>
+                            <constraint firstItem="hN5-Ew-qIk" firstAttribute="top" secondItem="Rj2-WQ-GbI" secondAttribute="top" constant="10" id="dM5-ZO-6D4"/>
+                            <constraint firstItem="LbW-zq-W6f" firstAttribute="top" secondItem="hN5-Ew-qIk" secondAttribute="bottom" constant="20" id="rLx-RZ-p8m"/>
+                            <constraint firstItem="ag3-fc-5Yz" firstAttribute="top" secondItem="Rj2-WQ-GbI" secondAttribute="top" constant="5" id="tMq-ms-UKY"/>
+                            <constraint firstItem="Rj2-WQ-GbI" firstAttribute="trailing" secondItem="ag3-fc-5Yz" secondAttribute="trailing" constant="10" id="zN8-jd-Nvf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ljQ-R1-cfP"/>
+                    <connections>
+                        <outlet property="datePicker" destination="WZ1-9u-ZB1" id="wwP-Qu-aed"/>
+                        <outlet property="nameTF" destination="LbW-zq-W6f" id="vwp-Mk-F79"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TSE-es-om2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1730" y="86"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iWX-Rl-UvC"/>
+        <segue reference="iBf-4T-9aK"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="repeat" catalog="system" width="128" height="98"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
