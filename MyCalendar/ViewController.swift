@@ -18,6 +18,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var fsCalendar: FSCalendar!
     @IBOutlet weak var scheduleTable: UITableView!
     @IBOutlet weak var goToEventButton: UIButton!
+    @IBAction func nextTapped(_ sender:UIButton) {
+        fsCalendar.setCurrentPage(getNextMonth(date: fsCalendar.currentPage), animated: true)
+    }
+
+    @IBAction  func previousTapped(_ sender:UIButton) {
+        fsCalendar.setCurrentPage(getPreviousMonth(date: fsCalendar.currentPage), animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +36,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         calendarUI()
 //        goToEventAddButton.addTarget(self, action: #selector(tapGoToEventAddButton(_:)), for: .touchUpInside)
         goToEventButton.superview?.bringSubviewToFront(goToEventButton)
+        
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.tabBarController?.tabBar.isHidden = false
+//    }
+//
+//
     
     func calendarUI() {
         fsCalendar.appearance.titleWeekendColor = .red
@@ -66,6 +81,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         selectedDate = date
         scheduleTable.reloadData()
+    }
+    
+    func getNextMonth(date:Date)->Date {
+        return  Calendar.current.date(byAdding: .month, value: 1, to:date)!
+    }
+
+    func getPreviousMonth(date:Date)->Date {
+        return  Calendar.current.date(byAdding: .month, value: -1, to:date)!
     }
     
     
