@@ -13,19 +13,17 @@ var selectedDate = Date()
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
 
     
-    
-    
     @IBOutlet weak var fsCalendar: FSCalendar!
     @IBOutlet weak var scheduleTable: UITableView!
     @IBOutlet weak var goToEventButton: UIButton!
     @IBAction func nextTapped(_ sender:UIButton) {
         fsCalendar.setCurrentPage(getNextMonth(date: fsCalendar.currentPage), animated: true)
     }
-
+    @IBOutlet weak var nextMonthButton: UIButton!
+    @IBOutlet weak var previousMonthButton: UIButton!
     @IBAction  func previousTapped(_ sender:UIButton) {
         fsCalendar.setCurrentPage(getPreviousMonth(date: fsCalendar.currentPage), animated: true)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedDate = Date()
@@ -36,7 +34,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         calendarUI()
 //        goToEventAddButton.addTarget(self, action: #selector(tapGoToEventAddButton(_:)), for: .touchUpInside)
         goToEventButton.superview?.bringSubviewToFront(goToEventButton)
-        
+        previousMonthButton.superview?.bringSubviewToFront(previousMonthButton)
+        nextMonthButton.superview?.bringSubviewToFront(nextMonthButton)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
     }
     
 //    override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +50,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //    }
 //
 //
-    
+   
     func calendarUI() {
         fsCalendar.appearance.titleWeekendColor = .red
         fsCalendar.appearance.headerMinimumDissolvedAlpha = 0

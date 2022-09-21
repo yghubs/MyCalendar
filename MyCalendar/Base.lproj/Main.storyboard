@@ -112,16 +112,16 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="2Cs-Ke-BM4" kind="relationship" relationship="viewControllers" id="Ek4-k8-v7m"/>
-                        <segue destination="9jM-LH-UYY" kind="relationship" relationship="viewControllers" id="ABG-VT-QP2"/>
-                        <segue destination="Vwr-aM-t2V" kind="relationship" relationship="viewControllers" id="rj6-Km-csC"/>
+                        <segue destination="cys-9Y-K2L" kind="relationship" relationship="viewControllers" id="NEP-A9-7u8"/>
+                        <segue destination="9jM-LH-UYY" kind="relationship" relationship="viewControllers" id="v4m-ak-hVZ"/>
+                        <segue destination="Vwr-aM-t2V" kind="relationship" relationship="viewControllers" id="n08-pd-hEV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssB-Eo-icc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1816" y="779"/>
         </scene>
-        <!--Title-->
+        <!--달력-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="calendarVC" wantsFullScreenLayout="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="MyCalendar" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,14 +130,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jA-iG-ZKS" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="44" width="414" height="450"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="450"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLp-fy-OIJ">
                                         <rect key="frame" x="360.5" y="10" width="43.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                         <connections>
-                                            <segue destination="Fb0-kb-rVR" kind="presentation" modalPresentationStyle="fullScreen" id="iWX-Rl-UvC"/>
+                                            <segue destination="Fb0-kb-rVR" kind="show" id="0gz-63-O45"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6s9-jq-qlW">
@@ -183,14 +183,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sNX-YL-pw7">
-                                <rect key="frame" x="0.0" y="494" width="414" height="279"/>
+                                <rect key="frame" x="0.0" y="538" width="414" height="235"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScheduleCell" id="amN-nR-Gms" customClass="ScheduleTableViewCell" customModule="MyCalendar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="amN-nR-Gms" id="ivY-XK-SEH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ry-FO-BCP">
@@ -225,16 +225,18 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sNX-YL-pw7" secondAttribute="trailing" id="ux5-Qd-Ghf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="0cP-o7-OKl"/>
+                    <navigationItem key="navigationItem" title="달력" id="0cP-o7-OKl"/>
                     <connections>
                         <outlet property="fsCalendar" destination="5jA-iG-ZKS" id="27k-Kr-QMn"/>
                         <outlet property="goToEventButton" destination="NLp-fy-OIJ" id="wco-hV-5sH"/>
+                        <outlet property="nextMonthButton" destination="8ph-S7-auA" id="5lF-lM-VxU"/>
+                        <outlet property="previousMonthButton" destination="6s9-jq-qlW" id="MWY-6h-Zjj"/>
                         <outlet property="scheduleTable" destination="sNX-YL-pw7" id="JiP-ea-Vs7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="85.714285714285708"/>
+            <point key="canvasLocation" x="1103" y="86"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="sq8-jB-zzg">
@@ -265,9 +267,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMm-OI-cbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3487" y="-339"/>
+            <point key="canvasLocation" x="4397.1014492753629" y="-339.50892857142856"/>
         </scene>
-        <!--Event Add View Controller-->
+        <!--일정 추가-->
         <scene sceneID="Udb-qf-aMd">
             <objects>
                 <viewController id="Fb0-kb-rVR" customClass="EventAddViewController" customModule="MyCalendar" customModuleProvider="target" sceneMemberID="viewController">
@@ -275,74 +277,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 추가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hN5-Ew-qIk">
-                                <rect key="frame" x="175" y="54" width="64" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="일정을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbW-zq-W6f">
-                                <rect key="frame" x="20" y="95" width="374" height="34"/>
+                                <rect key="frame" x="20" y="108" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="WZ1-9u-ZB1">
-                                <rect key="frame" x="0.0" y="149" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="162" width="414" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="cpJ-QL-f0Z"/>
                                 </constraints>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ag3-fc-5Yz">
-                                <rect key="frame" x="355" y="49" width="49" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="저장"/>
-                                <connections>
-                                    <action selector="saveAction:" destination="Fb0-kb-rVR" eventType="touchUpInside" id="9C0-xo-8LJ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rj2-WQ-GbI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Rj2-WQ-GbI" firstAttribute="trailing" secondItem="WZ1-9u-ZB1" secondAttribute="trailing" id="2f4-UN-dkT"/>
                             <constraint firstItem="WZ1-9u-ZB1" firstAttribute="top" secondItem="LbW-zq-W6f" secondAttribute="bottom" constant="20" id="BPQ-TY-eey"/>
-                            <constraint firstItem="hN5-Ew-qIk" firstAttribute="centerX" secondItem="Rj2-WQ-GbI" secondAttribute="centerX" id="E11-DZ-Rka"/>
+                            <constraint firstItem="LbW-zq-W6f" firstAttribute="top" secondItem="Rj2-WQ-GbI" secondAttribute="top" constant="20" id="FLu-KA-QMT"/>
                             <constraint firstItem="Rj2-WQ-GbI" firstAttribute="trailing" secondItem="LbW-zq-W6f" secondAttribute="trailing" constant="20" id="ThB-Tv-leL"/>
                             <constraint firstItem="WZ1-9u-ZB1" firstAttribute="leading" secondItem="Rj2-WQ-GbI" secondAttribute="leading" id="WM0-bU-F32"/>
                             <constraint firstItem="LbW-zq-W6f" firstAttribute="leading" secondItem="Rj2-WQ-GbI" secondAttribute="leading" constant="20" id="b3a-IZ-8DG"/>
-                            <constraint firstItem="hN5-Ew-qIk" firstAttribute="top" secondItem="Rj2-WQ-GbI" secondAttribute="top" constant="10" id="dM5-ZO-6D4"/>
-                            <constraint firstItem="LbW-zq-W6f" firstAttribute="top" secondItem="hN5-Ew-qIk" secondAttribute="bottom" constant="20" id="rLx-RZ-p8m"/>
-                            <constraint firstItem="ag3-fc-5Yz" firstAttribute="top" secondItem="Rj2-WQ-GbI" secondAttribute="top" constant="5" id="tMq-ms-UKY"/>
-                            <constraint firstItem="Rj2-WQ-GbI" firstAttribute="trailing" secondItem="ag3-fc-5Yz" secondAttribute="trailing" constant="10" id="zN8-jd-Nvf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ljQ-R1-cfP"/>
+                    <navigationItem key="navigationItem" title="일정 추가" id="eZz-H3-HYo">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="I5Q-zS-R50">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ag3-fc-5Yz">
+                                <rect key="frame" x="340.5" y="5" width="53.5" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="저장"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="Fb0-kb-rVR" eventType="touchUpInside" id="Sxu-07-N8W"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="saveAction:" destination="Fb0-kb-rVR" id="num-5F-y8d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="WZ1-9u-ZB1" id="wwP-Qu-aed"/>
                         <outlet property="nameTF" destination="LbW-zq-W6f" id="vwp-Mk-F79"/>
+                        <outlet property="saveButton" destination="I5Q-zS-R50" id="ke1-vI-Z8v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TSE-es-om2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="86"/>
+            <point key="canvasLocation" x="2159" y="86"/>
         </scene>
         <!--달력-->
-        <scene sceneID="kBe-Hf-LGC">
+        <scene sceneID="EdR-nj-Kca">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2Cs-Ke-BM4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="달력" image="calendar" catalog="system" id="2XL-Rv-34R"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cys-9Y-K2L" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="달력" image="calendar" catalog="system" id="b8Z-27-zoJ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C3X-zT-Vam">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3d4-D4-VWg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ars-kl-zAA"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GP1-NN-AsT"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yll-gz-gQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wKH-8j-yA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="85.714285714285708"/>
+            <point key="canvasLocation" x="19" y="86"/>
         </scene>
     </scenes>
     <resources>

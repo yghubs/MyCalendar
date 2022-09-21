@@ -27,9 +27,7 @@ class ScheduleListTableViewController: UITableViewController {
     // 각 row에 무엇을 보여줄지
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleListCell", for: indexPath)
-
         cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
-
         return cell
     }
 
