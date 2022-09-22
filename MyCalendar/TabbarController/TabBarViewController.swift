@@ -11,7 +11,6 @@ import SnapKit
 
 class TabBarViewController: UITabBarController {
     
-    @IBInspectable var initialIndex: Int = 0
     
     var customTabBarView = UIView(frame: .zero)
     // MARK: View lifecycle
@@ -37,8 +36,8 @@ class TabBarViewController: UITabBarController {
         self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         self.tabBar.layer.masksToBounds = false
-        self.tabBar.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
-        self.tabBar.layer.shadowOffset = CGSize(width: -4, height: -6)
+        self.tabBar.layer.shadowColor = UIColor.black.withAlphaComponent(0.1).cgColor
+        self.tabBar.layer.shadowOffset = CGSize(width: -4, height: -4)
         self.tabBar.layer.shadowOpacity = 0.5
         self.tabBar.layer.shadowRadius = 20
         
