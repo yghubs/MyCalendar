@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 class ListMainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var selectedDate = Date()
@@ -18,30 +19,44 @@ class ListMainViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         scheduleListTable.delegate = self
         scheduleListTable.dataSource = self
-
+       
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scheduleListTable.reloadData()
-
     }
     
     
+    
+    
+    //각 섹션별 row 수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Event().eventsForDate(date: selectedDate).count
+        return Event().eventsForDate(date: eventsList[section].date).count
 
     }
     
+    //row에 들어갈 데이터
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = scheduleListTable.dequeueReusableCell(withIdentifier: "ScheduleListCell") as! ScheduleListTableViewCell
-        let event = Event().eventsForDate(date: selectedDate)[indexPath.row]
+        
+        //현재 몇번째 section인지 파악
+        let event = Event().eventsForDate(date: eventsList[indexPath.section].date)[indexPath.row]
         cell.scheduleListCellLabel.text = event.name
 //        cell.label.text = data[indexPath.row]
-        
+
         return cell
     }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return eventsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return "\(eventsList[section].date)"
+        
+        
+    }
 }
-
-
-
