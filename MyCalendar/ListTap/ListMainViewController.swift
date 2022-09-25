@@ -54,8 +54,10 @@ class ListMainViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        return "\(eventsList[section].date)"
+        var formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd E"
+//        return "\(eventsList[section].date)"
+        return formatter.string(from: eventsList[section].date) + "요일"
         
         
     }

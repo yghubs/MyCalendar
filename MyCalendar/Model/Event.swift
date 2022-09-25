@@ -9,7 +9,17 @@ import Foundation
 
 var eventsList = [Event]()
 
-class Event
+
+//let encoder = JSONEncoder()
+//
+///// encoded는 Data형
+//if let encoded = try? encoder.encode(eventsList) {
+//    UserDefaults.standard.setValue(encoded, forKey: "eventsList")
+//}
+
+
+
+class Event: Encodable
 {
     var id: Int!
     var name: String!
@@ -45,3 +55,4 @@ class Event
 //        return daysEvents
 //    }
 }
+
