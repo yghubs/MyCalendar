@@ -171,6 +171,7 @@
                         <segue destination="cys-9Y-K2L" kind="relationship" relationship="viewControllers" id="NEP-A9-7u8"/>
                         <segue destination="S8D-6J-Khf" kind="relationship" relationship="viewControllers" id="OZ8-L0-gO3"/>
                         <segue destination="Vwr-aM-t2V" kind="relationship" relationship="viewControllers" id="ZAN-se-7ow"/>
+                        <segue destination="e2K-5H-kae" kind="relationship" relationship="viewControllers" id="HLo-y8-HFc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssB-Eo-icc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -294,36 +295,21 @@
             </objects>
             <point key="canvasLocation" x="1103" y="86"/>
         </scene>
-        <!--Test View Controller-->
+        <!--Item-->
         <scene sceneID="sq8-jB-zzg">
             <objects>
                 <viewController storyboardIdentifier="TestViewController" id="e2K-5H-kae" customClass="TestViewController" customModule="MyCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uEt-ET-dD6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="346-Bn-Lqs">
-                                <rect key="frame" x="189" y="437.5" width="36" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8wL-Y5-Zex"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="346-Bn-Lqs" firstAttribute="centerX" secondItem="uEt-ET-dD6" secondAttribute="centerX" id="eBS-iM-hdV"/>
-                            <constraint firstItem="346-Bn-Lqs" firstAttribute="centerX" secondItem="uEt-ET-dD6" secondAttribute="centerX" id="iWt-jb-3Ch"/>
-                            <constraint firstItem="346-Bn-Lqs" firstAttribute="centerY" secondItem="uEt-ET-dD6" secondAttribute="centerY" id="uZ0-ep-Z75"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="dateLabel" destination="346-Bn-Lqs" id="R2I-Wx-hMM"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Item" id="hQc-ii-i7T"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMm-OI-cbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4397.1014492753629" y="-339.50892857142856"/>
+            <point key="canvasLocation" x="19" y="2365"/>
         </scene>
         <!--일정 추가-->
         <scene sceneID="Udb-qf-aMd">

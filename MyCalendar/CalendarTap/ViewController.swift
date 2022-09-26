@@ -36,6 +36,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         goToEventButton.superview?.bringSubviewToFront(goToEventButton)
         previousMonthButton.superview?.bringSubviewToFront(previousMonthButton)
         nextMonthButton.superview?.bringSubviewToFront(nextMonthButton)
+        
+        //로컬에 저장된 일정들을 불러오기
+//        if let aUser:Event? = UserDefaults.standard.object(forKey: "UserEvent") as! Event {
+//        eventsList.append(aUser!)
+//        }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
