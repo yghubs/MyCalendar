@@ -13,6 +13,7 @@
 		736AADFE28E1AFDC00764563 /* holiday_2021.xml in Resources */ = {isa = PBXBuildFile; fileRef = 736AADF928E1AFDC00764563 /* holiday_2021.xml */; };
 		736AADFF28E1AFDC00764563 /* holiday_2022.xml in Resources */ = {isa = PBXBuildFile; fileRef = 736AADFA28E1AFDC00764563 /* holiday_2022.xml */; };
 		736AAE0028E1AFDC00764563 /* holiday_2024.xml in Resources */ = {isa = PBXBuildFile; fileRef = 736AADFB28E1AFDC00764563 /* holiday_2024.xml */; };
+		736AAE0428E2908000764563 /* HolidayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736AAE0328E2908000764563 /* HolidayService.swift */; };
 		737D758328D714F900ED2CBF /* ScheduleListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D758228D714F900ED2CBF /* ScheduleListTableViewController.swift */; };
 		737D758528DC2F7D00ED2CBF /* ScheduleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D758428DC2F7D00ED2CBF /* ScheduleListTableViewCell.swift */; };
 		737D758B28DC30F400ED2CBF /* ListMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D758A28DC30F400ED2CBF /* ListMainViewController.swift */; };
@@ -40,6 +41,7 @@
 		736AADF928E1AFDC00764563 /* holiday_2021.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = holiday_2021.xml; sourceTree = "<group>"; };
 		736AADFA28E1AFDC00764563 /* holiday_2022.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = holiday_2022.xml; sourceTree = "<group>"; };
 		736AADFB28E1AFDC00764563 /* holiday_2024.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = holiday_2024.xml; sourceTree = "<group>"; };
+		736AAE0328E2908000764563 /* HolidayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayService.swift; sourceTree = "<group>"; };
 		737D758228D714F900ED2CBF /* ScheduleListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListTableViewController.swift; sourceTree = "<group>"; };
 		737D758428DC2F7D00ED2CBF /* ScheduleListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListTableViewCell.swift; sourceTree = "<group>"; };
 		737D758A28DC30F400ED2CBF /* ListMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMainViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 			path = HolidayInfo_XML;
 			sourceTree = "<group>";
 		};
+		736AAE0228E2906300764563 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				736AAE0328E2908000764563 /* HolidayService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		737D758628DC301A00ED2CBF /* CalendarTap */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,10 +145,10 @@
 			isa = PBXGroup;
 			children = (
 				73E6E3E528CDCB6700A147A5 /* MyCalendar */,
-				736AAE0128E1AFE600764563 /* HolidayInfo_XML */,
 				73E6E3E428CDCB6700A147A5 /* Products */,
 				D643FAE2479AF3BDB0319F57 /* Pods */,
 				459E4615C3775B23A65ADCB8 /* Frameworks */,
+				736AAE0228E2906300764563 /* Services */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +172,7 @@
 				737D758828DC305600ED2CBF /* ListTap */,
 				737D758928DC308000ED2CBF /* RoutineTap */,
 				73E6E40428CDD5FF00A147A5 /* TabbarController */,
+				736AAE0128E1AFE600764563 /* HolidayInfo_XML */,
 				73E6E3EF28CDCB6800A147A5 /* Assets.xcassets */,
 				73E6E3F128CDCB6800A147A5 /* LaunchScreen.storyboard */,
 				73E6E3F428CDCB6800A147A5 /* Info.plist */,
@@ -319,6 +330,7 @@
 				73E6E40A28D06C2300A147A5 /* Event.swift in Sources */,
 				73E6E3FB28CDCF7900A147A5 /* TestViewController.swift in Sources */,
 				73E6E40128CDD54700A147A5 /* TabBarViewController.swift in Sources */,
+				736AAE0428E2908000764563 /* HolidayService.swift in Sources */,
 				73E6E3E928CDCB6700A147A5 /* SceneDelegate.swift in Sources */,
 				73E6E40828CEC81600A147A5 /* ScheduleTableViewCell.swift in Sources */,
 			);

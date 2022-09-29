@@ -9,5 +9,11 @@ import UIKit
 
 class RoutineViewController: UIViewController {
     
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        print(HolidayService().items)
+//
+//    }
+    
 }
 

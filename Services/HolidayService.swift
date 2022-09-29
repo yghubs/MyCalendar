@@ -1,39 +1,37 @@
+////
+////  HolidayService.swift
+////  MyCalendar
+////
+////  Created by 유재호 on 2022/09/27.
+////
 //
-//  TestViewController.swift
-//  MyCalendar
+//import Foundation
+//import UIKit
 //
-//  Created by 유재호 on 2022/09/11.
-//
-
-import UIKit
-
-
-class TestViewController: UIViewController, XMLParserDelegate {
-    
-
-////    @IBOutlet weak var dateLabel: UILabel!
-////    var date: String!
-
+//class HolidayService: UIViewController ,XMLParserDelegate {
+//    
 //    var items: [Item] = []
 //    var elementName: String = String()
 //    var locdate = String()
 //    var dateName = String()
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
 //
-//        if let path = Bundle.main.url(forResource: "holiday_2022", withExtension: "xml") {
-//                if let parser = XMLParser(contentsOf: path) {
-//                    parser.delegate = self
-//                    parser.parse()
-//                }
-//            }
 //
-//            print(items[0].locdate)
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateFormat = "yyyyMMdd"
-//            print(dateFormatter.date(from: items[0].locdate))
-//
+//    func holidayParser() {
+//    if let path = Bundle.main.url(forResource: "holiday_2022", withExtension: "xml") {
+//        if let parser = XMLParser(contentsOf: path) {
+//            parser.delegate = self
+//            parser.parse()
+//        }
 //    }
+//    }
+//
+//
+////        print(items[0].locdate)
+////        let dateFormatter = DateFormatter()
+////        dateFormatter.dateFormat = "yyyyMMdd"
+////        print(dateFormatter.date(from: items[0].locdate))
+////
+//
 //    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
 //
 //        if elementName == "item" {
@@ -64,4 +62,6 @@ class TestViewController: UIViewController, XMLParserDelegate {
 //            }
 //        }
 //    }
-}
+//
+//
+//}

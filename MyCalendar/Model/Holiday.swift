@@ -11,8 +11,6 @@ import Foundation
 struct Item {
     var dateName: String
     var locdate: String
-    
 }
-
 
 
