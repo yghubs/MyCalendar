@@ -24,12 +24,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction  func previousTapped(_ sender:UIButton) {
         fsCalendar.setCurrentPage(getPreviousMonth(date: fsCalendar.currentPage), animated: true)
     }
+    @IBOutlet weak var holidayLabel: UILabel!
     
     var items: [Item] = []
     var elementName: String = String()
     var locdate = String()
     var dateName = String()
     var holidayDates = [Date]()
+    var holidayName = [Date: String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedDate = Date()
@@ -49,7 +51,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //        eventsList.append(aUser!)
         //        }
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +68,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         fsCalendar.locale = Locale(identifier: "ko_KR")
     }
     
+
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -76,8 +80,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = scheduleTable.dequeueReusableCell(withIdentifier: "ScheduleCell") as! ScheduleTableViewCell
         let event = Event().eventsForDate(date: selectedDate)[indexPath.row]
-        cell.label.text = event.name
         //        cell.label.text = data[indexPath.row]
+//        cell.label.text = "\(Date())"
+        cell.label.text = event.name
+
         return cell
     }
     //
@@ -92,7 +98,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         selectedDate = date
         scheduleTable.reloadData()
+        var i = 0
+        while i < items.count {
+            if selectedDate == holidayDates[i] {
+                holidayLabel.text = holidayName[holidayDates[i]]
+                break
+            }
+            i+=1
+            do {
+                holidayLabel.text = ""
+            }
+        }
     }
+    
+
     
     func getNextMonth(date:Date)->Date {
         return  Calendar.current.date(byAdding: .month, value: 1, to:date)!
@@ -129,11 +148,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 extension ViewController: XMLParserDelegate {
     
     func holidayParsing() {
-        if let path = Bundle.main.url(forResource: "holiday_2022", withExtension: "xml") {
+        for i in 2020...2024{
+        if let path = Bundle.main.url(forResource: "holiday_\(i)", withExtension: "xml") {
             if let parser = XMLParser(contentsOf: path) {
                 parser.delegate = self
                 parser.parse()
             }
+        }
         }
     }
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
@@ -186,7 +207,9 @@ extension ViewController: XMLParserDelegate {
         for i in 0..<items.count {
             var holidayStringToDateform = formatter.date(from: items[i].locdate)
             holidayDates.append(holidayStringToDateform!)
-            
+            holidayName[holidayStringToDateform!] = items[i].dateName
+            print(holidayDates)
+
         }
     }
     

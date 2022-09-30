@@ -240,18 +240,18 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sNX-YL-pw7">
-                                <rect key="frame" x="0.0" y="538" width="414" height="235"/>
+                                <rect key="frame" x="0.0" y="578" width="414" height="195"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScheduleCell" id="amN-nR-Gms" customClass="ScheduleTableViewCell" customModule="MyCalendar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="amN-nR-Gms" id="ivY-XK-SEH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ry-FO-BCP">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="42" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -269,6 +269,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XY-ur-4Iz">
+                                <rect key="frame" x="20" y="549" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -276,9 +282,11 @@
                             <constraint firstItem="5jA-iG-ZKS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6ba-Uj-IXw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5jA-iG-ZKS" secondAttribute="trailing" id="6qP-2S-Bdv"/>
                             <constraint firstItem="sNX-YL-pw7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Oru-j4-Vhv"/>
-                            <constraint firstItem="sNX-YL-pw7" firstAttribute="top" secondItem="5jA-iG-ZKS" secondAttribute="bottom" id="V8s-Jb-20q"/>
+                            <constraint firstItem="sNX-YL-pw7" firstAttribute="top" secondItem="5jA-iG-ZKS" secondAttribute="bottom" constant="40" id="V8s-Jb-20q"/>
                             <constraint firstItem="5jA-iG-ZKS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hM4-Lr-fQC"/>
+                            <constraint firstItem="sNX-YL-pw7" firstAttribute="top" secondItem="5XY-ur-4Iz" secondAttribute="bottom" constant="10" id="kGU-V9-TLy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sNX-YL-pw7" secondAttribute="bottom" constant="40" id="ked-AQ-xCg"/>
+                            <constraint firstItem="5XY-ur-4Iz" firstAttribute="leading" secondItem="sNX-YL-pw7" secondAttribute="leading" constant="20" id="lhM-Zt-JSE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sNX-YL-pw7" secondAttribute="trailing" id="ux5-Qd-Ghf"/>
                         </constraints>
                     </view>
@@ -286,6 +294,7 @@
                     <connections>
                         <outlet property="fsCalendar" destination="5jA-iG-ZKS" id="27k-Kr-QMn"/>
                         <outlet property="goToEventButton" destination="NLp-fy-OIJ" id="wco-hV-5sH"/>
+                        <outlet property="holidayLabel" destination="5XY-ur-4Iz" id="EBD-yH-7cN"/>
                         <outlet property="nextMonthButton" destination="8ph-S7-auA" id="5lF-lM-VxU"/>
                         <outlet property="previousMonthButton" destination="6s9-jq-qlW" id="MWY-6h-Zjj"/>
                         <outlet property="scheduleTable" destination="sNX-YL-pw7" id="JiP-ea-Vs7"/>
