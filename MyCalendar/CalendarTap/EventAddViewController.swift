@@ -39,6 +39,7 @@ class EventAddViewController: UIViewController
         newEvent.name = nameTF.text
         newEvent.date = datePicker.date
         eventsList.append(newEvent)
+        
 
         //로컬에 일정들을 저장
 //        UserDefaults.standard.set(eventsList, forKey: "userEvent")
@@ -47,6 +48,7 @@ class EventAddViewController: UIViewController
         guard let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "calendarVC") as? ViewController else { return }
         
         self.navigationController?.pushViewController(pushVC, animated: true)
+        selectedDate = datePicker.date
         
     }
     

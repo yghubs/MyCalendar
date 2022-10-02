@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var holidayName = [Date: String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedDate = Date()
+     
         fsCalendar.delegate = self
         fsCalendar.dataSource = self
         scheduleTable.delegate = self
@@ -65,10 +65,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         fsCalendar.appearance.headerMinimumDissolvedAlpha = 0
         fsCalendar.appearance.eventDefaultColor = UIColor.black
         fsCalendar.appearance.eventSelectionColor = UIColor.black
+        fsCalendar.appearance.todayColor = nil
+        fsCalendar.select(selectedDate)
         fsCalendar.locale = Locale(identifier: "ko_KR")
     }
     
-
+    //MARK: 오늘 날짜 네모 박스로 고정
+    
     
     
     
@@ -208,7 +211,6 @@ extension ViewController: XMLParserDelegate {
             var holidayStringToDateform = formatter.date(from: items[i].locdate)
             holidayDates.append(holidayStringToDateform!)
             holidayName[holidayStringToDateform!] = items[i].dateName
-            print(holidayDates)
 
         }
     }
