@@ -54,7 +54,7 @@ class ListMainViewController: UIViewController, UITableViewDelegate, UITableView
        
         return eventsList.count
     }
-    
+    // 아무 주석 추가
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ko_KR")
