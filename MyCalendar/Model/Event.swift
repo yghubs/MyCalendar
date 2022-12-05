@@ -38,6 +38,7 @@ class Event: Encodable
         return daysEvents
     }
     
+    
 //    func eventsForDateAndTime(date: Date, hour: Int) -> [Event]
 //    {
 //        var daysEvents = [Event]()

@@ -33,6 +33,8 @@ class EventAddViewController: UIViewController
     }
     
     
+    @IBOutlet weak var asdfa: UILabel!
+    
     @IBAction func saveAction(_ sender: Any) {
         let newEvent = Event()
         newEvent.id = eventsList.count

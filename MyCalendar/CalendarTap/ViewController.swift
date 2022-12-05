@@ -61,6 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func calendarUI() {
+        fsCalendar.appearance.headerDateFormat = "YYYY년 MM월"
         fsCalendar.appearance.titleWeekendColor = .red
         fsCalendar.appearance.headerMinimumDissolvedAlpha = 0
         fsCalendar.appearance.eventDefaultColor = UIColor.black
@@ -70,7 +71,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         fsCalendar.locale = Locale(identifier: "ko_KR")
     }
     
-    //MARK: 오늘 날짜 네모 박스로 고정
     
     
     
@@ -83,8 +83,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = scheduleTable.dequeueReusableCell(withIdentifier: "ScheduleCell") as! ScheduleTableViewCell
         let event = Event().eventsForDate(date: selectedDate)[indexPath.row]
-        //        cell.label.text = data[indexPath.row]
-//        cell.label.text = "\(Date())"
         cell.label.text = event.name
 
         return cell

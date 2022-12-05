@@ -38,7 +38,7 @@ class TabBarViewController: UITabBarController {
         self.tabBar.layer.masksToBounds = false
         self.tabBar.layer.shadowColor = UIColor.black.withAlphaComponent(0.1).cgColor
         self.tabBar.layer.shadowOffset = CGSize(width: -4, height: -4)
-        self.tabBar.layer.shadowOpacity = 0.9
+        self.tabBar.layer.shadowOpacity = 0.92
         self.tabBar.layer.shadowRadius = 20
         
         self.view.bringSubviewToFront(self.tabBar)
